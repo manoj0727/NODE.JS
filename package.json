@@ -1,0 +1,21 @@
+{
+  "name": "node.js",
+  "version": "1.0.0",
+  "description": "L1->  Node js installation -> even version is stable and can be work in production                      -> Odd version is unstable as it is Beta version some changes there                      -> node --version                      -> npm(node package manager) -v",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node hello.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manoj0727/NODE.JS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manoj0727/NODE.JS/issues"
+  },
+  "homepage": "https://github.com/manoj0727/NODE.JS#readme"
+}
