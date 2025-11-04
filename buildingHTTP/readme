@@ -1,0 +1,41 @@
+# ⚙️ Difference Between Blocking and Non-Blocking in Node.js (Hinglish)
+
+Node.js me do tarah ke operations hote hain — **Blocking (Synchronous)** aur **Non-Blocking (Asynchronous)**.  
+Chalo dono ko detail me samjhte hain 👇
+
+---
+
+## ⚖️ Table: Blocking vs Non-Blocking
+
+| 🔹 **Basis** | 🔸 **Blocking (Synchronous)** | 🔸 **Non-Blocking (Asynchronous)** |
+|--------------|------------------------------|------------------------------------|
+| **Meaning** | Jab ek operation complete hone tak agla code **ruk jaata hai**. | Jab ek operation background me chalta hai aur agla code **continue** karta hai bina rukke. |
+| **Execution Style** | Line-by-line, sequential execution. | Parallel style — ek task background me chalta hai, baaki code bhi execute hota rehta hai. |
+| **Thread Usage** | Same thread wait karta hai jab tak task complete nahi hota. | Thread background me task bhej deta hai aur aage badh jaata hai. |
+| **Performance** | Slow — kyunki ek time pe sirf ek hi kaam ho sakta hai. | Fast — multiple tasks ek saath handle hote hain. |
+| **Example (Code)** | ```js<br>const fs = require("fs");<br>const data = fs.readFileSync("file.txt", "utf8");<br>console.log(data);<br>console.log("Next line");``` | ```js<br>const fs = require("fs");<br>fs.readFile("file.txt", "utf8", (err, data) => {<br>  console.log(data);<br>});<br>console.log("Next line");``` |
+| **Output** | File read hone ke baad hi `"Next line"` print hoti hai. | `"Next line"` pehle print hoti hai, file ka data baad me print hota hai (jab ready hota hai). |
+| **Blocking Behavior** | Main thread **block** ho jaata hai jab tak kaam complete nahi hota. | Main thread **free** rehta hai aur dusre kaam karta rehta hai. |
+| **Use Case** | Small scripts ya one-time tasks jaha delay se farq nahi padta. | Real-time apps (Chat, APIs, servers) jaha speed aur concurrency zaroori hai. |
+| **Example Output** | **Blocking:**<br>File Content<br>Next line | **Non-Blocking:**<br>Next line<br>File Content |
+| **Node.js Default Nature** | Node.js me by default har operation **non-blocking** hota hai. | Blocking functions manually likhne padte hain (like `readFileSync()`). |
+
+---
+
+## 🧠 Example: Blocking (Synchronous)
+
+```js
+const fs = require('fs');
+
+console.log("Start");
+const data = fs.readFileSync('demo.txt', 'utf8');
+console.log(data);
+console.log("End");
+
+
+EXample 
+Socho ek restaurant me waiter (Node.js Event Loop):
+
+Blocking: Waiter ek customer ke khatam hone ka intezaar karta hai.
+
+Non-Blocking: Waiter ek order kitchen me deta hai aur next customer se order lene chala jaata hai.

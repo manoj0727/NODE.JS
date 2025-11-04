@@ -1,0 +1,5 @@
+/log.txt
+node_modules/
+# /buildingHTTP/log.txt
+buildingHTTP/node_modules/
+.gitignore/

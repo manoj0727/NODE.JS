@@ -12,3 +12,9 @@ NPM package-> we can use npm init to create dependencies and then we can set scr
               frontend related applications are not present here.
 
 L3-> 
+   blocking = Synchronus call
+   Non Blocking = Asynchronus call
+   The V8 engine (written in C++) is responsible for converting your JavaScript code into machine code and executing it.
+   Jab tum async kaam karte ho — jaise file read, HTTP request, timer —
+libuv background me unhe handle karta hai, bina main thread ko block kiye.
+Iske andar thread pool hota hai jo heavy kaam background me karta hai.

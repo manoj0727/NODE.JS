@@ -1,0 +1,9 @@
+URL = Uniform Resource Locator
+protocol = Set of Rules that communicate with browser
+https = hypertext transfer protocol secure
+https://manojkumawat.rf.gd/?i=1 
+                '?'-> query parameter 
+get => when we enter website
+post = > when we post data to server
+PUT => update data
+DELETE => delete data
